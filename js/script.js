@@ -9,10 +9,10 @@
 
     // переключатель меню на низком рзрешении
 
-    $(".main-header-top-small__toggler").click(function(){
+    $(".main-header-top-small__toggler").click(function () {
         $(".main-header-top-small__toggler").toggleClass("on");
         $(".main-header-top-small__menu").slideToggle();
-        
+
     });
 
 
@@ -31,7 +31,7 @@
         var icons = $(".detail-icons__unit");
         var curentIcons = $(".detail-icons__unit").length;
 
-
+  
 
         if (n > curentIcons) {
             detailsIndex = 1
@@ -52,15 +52,16 @@
         icons[detailsIndex - 1].className += " detail-icons__unit-active";
     }
 
-    
+
 
     //Для табов
 
     var tabServices = $(".our-services-content__icon");
     var tabServicesContent = $(".our-services-content__description-skils");
 
-    
+
     showTabsContent(0);
+
     function hideTabsContent(n) {
         for (var i = n; i < tabServicesContent.length; i++) {
             tabServicesContent[i].style.display = "none";
@@ -76,19 +77,19 @@
         tabServicesContent[m].style.display = "flex";
         tabServices[m].classList.add('our-services-content__icon_active');
     };
-    
+
     //прогресс бар сотрудников
-    
+
     var skils = $('.slide-text__skil-progress-bar');
-    var percent = $('.slide-text__skil-progress-bar').map(function() {
+    var percent = $('.slide-text__skil-progress-bar').map(function () {
         return this.title;
     }).get();
-    
-    for (var i = 0; i < skils.length; i++){
+
+    for (var i = 0; i < skils.length; i++) {
         skils[i].style.width = percent[i];
     }
-    
-   // слайдер команда
+
+    // слайдер команда
 
     var teamIndex = 1;
     showTeamSlides(teamIndex);
@@ -125,7 +126,7 @@
     }
 
     // слайдер отзывы
-    
+
 
     var testimonialsIndex = 1;
     showTestimonialSlides(testimonialsIndex);
@@ -158,9 +159,9 @@
         slides[testimonialsIndex - 1].style.display = "flex";
         dots[testimonialsIndex - 1].className += " testimonials-slider__dot_active";
     }
-    
+
     // слайдер новости
-    
+
 
     var newsIndex = 1;
     showNewsSlides(newsIndex);
@@ -194,29 +195,29 @@
         dots[newsIndex - 1].className += " blog-slider__dot_active";
     }
 
-//модальные окна для тарифных планов
+    //модальные окна для тарифных планов
 
     var plans = $(".our-price__plan-header-footer");
     var modals = $(".our-price__modals");
     var modalWindows = $(".our-price__modals-element");
     var modalCloses = $(".our-price__modals-element_close");
 
-    function showModal (s) {
+    function showModal(s) {
         modals[0].style.display = "block";
         modalWindows[s].style.display = "block";
     }
-    
+
     function closeModal(c) {
         modals[0].style.display = "none";
-        for ( var i = 0; i < modalWindows.length; i++){
-                modalWindows[i].style.display = "none";
-            }
+        for (var i = 0; i < modalWindows.length; i++) {
+            modalWindows[i].style.display = "none";
+        }
     }
-    
+
     window.onclick = function (event) {
-        if (event.target == modals[0]){
+        if (event.target == modals[0]) {
             modals[0].style.display = "none";
-            for ( var i = 0; i < modalWindows.length; i++){
+            for (var i = 0; i < modalWindows.length; i++) {
                 modalWindows[i].style.display = "none";
             }
         }
